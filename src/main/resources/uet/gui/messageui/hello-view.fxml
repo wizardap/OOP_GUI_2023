@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="360.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uet.gui.messageui.HelloController">
+   <top>
+      <HBox prefHeight="39.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="83.0">
+               <children>
+                  <ImageView fx:id="backIcon" accessibleRole="BUTTON" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/back.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="191.0" stylesheets="@css/styles.css">
+               <children>
+                  <Circle fx:id="profileCircle" fill="DODGERBLUE" radius="22.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <VBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="122.0">
+                     <children>
+                        <Label fx:id="Username" text="Meow" />
+                        <Label fx:id="status" layoutX="10.0" layoutY="10.0" text="Online" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox fx:id="callButtons" alignment="CENTER_LEFT" layoutX="190.0" layoutY="10.0" prefHeight="39.0" prefWidth="90.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="telephoneIcon" accessibleRole="BUTTON" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/telephone.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="videoCallIcon" accessibleRole="BUTTON" fitHeight="40.0" fitWidth="50.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/video.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageIcon" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/picture.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <TextField prefHeight="55.0" prefWidth="286.0" promptText="Your message ..." styleClass="messageField" stylesheets="@css/styles.css">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+            <HBox fx:id="actionButtons" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <ImageView fx:id="sendIcon" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/paper-plane-top.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="micIcon" fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/mic.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="sendMessage" alignment="CENTER_RIGHT" layoutX="167.0" layoutY="385.0" prefHeight="82.0" prefWidth="178.0">
+               <children>
+                  <TextArea id="sendMessageContent" fx:id="content" prefHeight="62.0" prefWidth="200.0" styleClass="chatBubbleMessage" stylesheets="@css/styles.css" text="I think UET is my best university!" wrapText="true">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Text fx:id="statusMessage" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Delivired" />
+               </children>
+            </VBox>
+            <VBox fx:id="receiveMessage" alignment="CENTER_LEFT" layoutX="14.0" layoutY="302.0" prefHeight="82.0" prefWidth="178.0">
+               <children>
+                  <TextArea id="receiveMessageContent" fx:id="content" prefHeight="62.0" prefWidth="200.0" styleClass="chatBubbleMessage" stylesheets="@css/styles.css" text="What do you think about UET ?" wrapText="true">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </TextArea>
+                  <Text fx:id="statusMessage" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" />
+               </children>
+            </VBox>
+            <Text layoutX="164.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
