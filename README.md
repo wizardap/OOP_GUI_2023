@@ -1,2 +1,2 @@
-![example.png](example.png)
-Example of a generated image.
+![example.png](example.png) <br/>
+Example of the output of the program. 
